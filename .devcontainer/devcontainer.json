@@ -1,0 +1,12 @@
+{
+    "name": "Rescue Backend",
+    "image": "mcr.microsoft.com/vscode/devcontainers/rust:latest",
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+        "rust-lang.rust",
+        "ms-vscode.cpptools"
+    ],
+    "postCreateCommand": "cargo build"
+}

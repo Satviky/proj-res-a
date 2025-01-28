@@ -24,4 +24,3 @@ The game aims to entertain, refresh the mind, and provide mental exercise.
 - iOS
 - Potential Windows demo level for testing
 
-
