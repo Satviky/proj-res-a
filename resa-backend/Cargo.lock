@@ -1444,6 +1444,7 @@ name = "resa-backend"
 version = "0.1.0"
 dependencies = [
  "actix-web",
+ "futures-util",
  "mongodb",
  "serde",
  "serde_derive",
