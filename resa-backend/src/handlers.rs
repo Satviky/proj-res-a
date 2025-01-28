@@ -7,8 +7,15 @@ use crate::models::Message;
 
 pub async fn get_messages(client: web::Data<Client>) -> HttpResponse {
     let collection = client.database("rescue").collection::<Message>("messages");
-    let cursor = collection.find(None, None).await.unwrap();
-    let messages: Vec<Message> = cursor.try_collect().await.unwrap();
+    let mut cursor = collection.find(None, None).await.unwrap();
+    let mut messages: Vec<Message> = Vec::new();
+
+    while let Some(result) = cursor.next().await {
+        match result {
+            Ok(document) => messages.push(document),
+            Err(e) => println!("Error: {}", e),
+        }
+    }
 
     HttpResponse::Ok().json(messages)
 }
