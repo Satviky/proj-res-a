@@ -1,0 +1,11 @@
+{
+    "name": "Rescue Frontend",
+    "image": "cirrusci/flutter:stable",
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+        "Dart-Code.flutter"
+    ],
+    "postCreateCommand": "flutter doctor"
+}
