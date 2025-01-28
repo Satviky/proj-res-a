@@ -2,6 +2,7 @@ use actix_web::{web, HttpResponse};
 use mongodb::bson::doc;
 use mongodb::Client;
 use serde_json::json;
+use futures_util::stream::StreamExt; // Import StreamExt trait
 
 use crate::models::Message;
 
